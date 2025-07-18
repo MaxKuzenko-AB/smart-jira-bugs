@@ -16,7 +16,7 @@ class SummaryParser:
         ticket_data = {}
 
         if len(parts) >= 3:
-            ticket_data["project"] = parts[0]
+            ticket_data["pod"] = parts[0]
             ticket_data["feature"] = parts[1]
             ticket_data["description"] = parts[2]
 
@@ -38,15 +38,17 @@ class FieldMapper:
             dict: A dictionary containing the mapped fields.
         """
 
-        project = ticket_data.get("project")
+        pod = ticket_data.get("pod")
         feature = ticket_data.get("feature")
         summary = ticket_data.get("description")
 
-        final_summary = f"[{project} | {feature}]: {summary}"
 
-        team_name = f"PED: {project}"
+        final_summary = f"[{pod} | {feature}]: {summary}"
+
+        #team_name = f"PED: {pod}"
 
         return {
+            "pod": pod,
             "summary": final_summary,
             #"team": team_name,
             "issue_type": self.issue_type,

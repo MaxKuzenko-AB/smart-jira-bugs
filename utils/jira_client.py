@@ -1,5 +1,5 @@
 import requests
-from config import JIRA_URL, JIRA_EMAIL, JIRA_TOKEN
+from utils.config import JIRA_URL, JIRA_EMAIL, JIRA_TOKEN
 
 
 class JiraTicketCreator:
