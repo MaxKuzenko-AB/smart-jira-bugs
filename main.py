@@ -13,6 +13,8 @@ def main():
         description = issue.get("description", "No description")
         print(f"[{key}] {summary}")
         print(description)
+        print("Expected:\n", issue["expected"])
+        print("Actual:\n", issue["actual"])
         print("-" * 40)
 
 
